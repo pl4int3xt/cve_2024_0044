@@ -30,7 +30,7 @@ def display_banner():
           ''')
 
 parser = argparse.ArgumentParser(
-    description='PWNTAPO: Unveiling Command Injection in TP-Link Tapo C200 Cameras (<= v1.1.16 Build 211209)',
+    description='CVE-2024-0044: run-as any app',
     formatter_class=CustomFormatter,
     epilog= display_banner()
 )
