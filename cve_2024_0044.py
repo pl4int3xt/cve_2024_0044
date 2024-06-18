@@ -1,6 +1,5 @@
 import argparse
 import subprocess, os
-from art import *
 
 class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter, argparse.RawDescriptionHelpFormatter):
     pass
