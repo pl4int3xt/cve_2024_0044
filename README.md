@@ -38,7 +38,7 @@ python3 cve_2024_0044.py -h
           
 usage: cve_2024_0044.py [-h] -P P -A A
 
-CVE-2024-0044: run-as any app
+CVE-2024-0044: run-as any app @Pl4int3xt
 
 options:
   -h, --help  show this help message and exit
