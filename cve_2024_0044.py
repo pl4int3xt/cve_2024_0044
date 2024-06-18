@@ -29,7 +29,7 @@ def display_banner():
           ''')
 
 parser = argparse.ArgumentParser(
-    description='CVE-2024-0044: run-as any app',
+    description='CVE-2024-0044: run-as any app @Pl4int3xt',
     formatter_class=CustomFormatter,
     epilog= display_banner()
 )
