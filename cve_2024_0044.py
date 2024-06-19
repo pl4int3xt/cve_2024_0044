@@ -1,7 +1,5 @@
 import argparse
 import subprocess, os
-import re
-from tqdm import tqdm
 
 GREEN = "\033[32m"
 CYAN = "\033[36m"
